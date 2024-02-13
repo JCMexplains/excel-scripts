@@ -1,7 +1,8 @@
 import names_to_indices
 from openpyxl import load_workbook
 
-columns = 
+from
+
 
 def delete_columns_in_excel(file_path, cols_to_delete):
     """
