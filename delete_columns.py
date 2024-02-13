@@ -1,4 +1,5 @@
-import names_to_indices
+from col_names import column_names # a list
+from names_to_indices import column_names_to_indices
 from openpyxl import load_workbook
 
 
@@ -27,7 +28,7 @@ def delete_columns_in_excel(file_path, cols_to_delete):
     wb.save(filename=modified_excel_path)
 
 
-# Example usage:
-# ensure the list is 
-# in descending order for accurate deletion
-delete_columns_in_excel('data.xlsx', [4, 2])
+# # Example usage:
+# # ensure the list is 
+# # in descending order for accurate deletion
+# delete_columns_in_excel('data.xlsx', [4, 2])

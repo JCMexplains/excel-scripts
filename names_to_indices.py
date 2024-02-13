@@ -23,13 +23,13 @@ def column_names_to_indices(file_path, sheet_name, column_names):
     return col_indices
 
 
-# Example usage
-file_path = 'data.xlsx'
-sheet_name = 'Sheet1'
-column_names = ['ColumnA', 'ColumnB']  # Example column names
-indices = column_names_to_indices(file_path, sheet_name, column_names)
-print(indices)
+# # Example usage
+# file_path = 'data.xlsx'
+# sheet_name = 'Sheet1'
+# column_names = ['ColumnA', 'ColumnB']  # Example column names
+# indices = column_names_to_indices(file_path, sheet_name, column_names)
+# print(indices)
 
-# To print sorted indices in reverse order
-indices_list = sorted(indices.values(), reverse=True)
-print(indices_list)
+# # To print sorted indices in reverse order
+# indices_list = sorted(indices.values(), reverse=True)
+# print(indices_list)
