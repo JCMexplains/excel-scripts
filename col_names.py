@@ -1,6 +1,6 @@
 # optional but recommended style to include a comma 
 # after the final element in a list
-column_names = [
+col_names = [
     'ClassFilter',
     'CourseTermKey',
     'Credit Type',

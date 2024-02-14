@@ -1,7 +1,7 @@
 
 
 
-def delete_columns_in_excel(ws, cols_to_delete):
+def delete_columns(ws, cols_to_delete):
     '''
     Delete specified columns from an Excel file using openpyxl.
 
@@ -19,4 +19,4 @@ def delete_columns_in_excel(ws, cols_to_delete):
 # # Example usage:
 # # ensure the list is 
 # # in descending order for accurate deletion
-# delete_columns_in_excel('data.xlsx', [4, 2])
+# delete_columns('data.xlsx', [4, 2])
