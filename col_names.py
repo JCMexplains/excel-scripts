@@ -2,6 +2,7 @@
 # after the final element in a list
 column_names = [
     'ClassFilter',
+    'CourseTermKey',
     'Credit Type',
     'Curriculum.BC Course Discipline',
     'Curriculum.Course Id Prefix',

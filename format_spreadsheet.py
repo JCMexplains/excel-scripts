@@ -15,7 +15,7 @@ wb = load_workbook(file_path)
 # Select the active worksheet or specify the sheet name
 ws = wb.active  # or wb['SheetName']
 
-print(ws.tables.items())
+# print(ws.tables.items())
 
 indices = column_names_to_indices(ws, column_names, row_to_search)
 
