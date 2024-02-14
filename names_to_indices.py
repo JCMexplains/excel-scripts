@@ -2,7 +2,7 @@ from openpyxl import load_workbook
 
 
 def column_names_to_indices(file_path, sheet_name, column_names):
-    """
+    '''
     Convert column names to indices in an Excel sheet.
 
     Parameters:
@@ -12,7 +12,7 @@ def column_names_to_indices(file_path, sheet_name, column_names):
 
     Returns:
     A dictionary with column names as keys and their 1-based indices as values.
-    """
+    '''
     # Load the worksheet directly
     ws = load_workbook(file_path)[sheet_name]
 
