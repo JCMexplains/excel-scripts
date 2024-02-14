@@ -1,10 +1,6 @@
-from openpyxl import load_workbook
 
-def convert_text_to_numbers(file_path):
-    # Load the workbook and select the active worksheet
-    wb = load_workbook(filename=file_path)
-    ws = wb.active  
-    # Assuming you want to work with the first sheet
+def convert_text_to_numbers(ws):
+    # Takes an Excel worksheet from openpyxl as an argument
 
     # Iterate through all rows and columns, 
     # converting text to numbers where applicable
