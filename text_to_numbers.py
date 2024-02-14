@@ -1,7 +1,7 @@
 from openpyxl import load_workbook
 
 
-def convert_text_to_numbers_with_openpyxl(file_path):
+def convert_text_to_numbers(file_path):
     # Load the workbook and select the active worksheet
     wb = load_workbook(filename=file_path)
     ws = wb.active  
@@ -28,4 +28,4 @@ def convert_text_to_numbers_with_openpyxl(file_path):
 
 
 # Example usage
-convert_text_to_numbers_with_openpyxl("data.xlsx")
+# convert_text_to_numbers("data.xlsx")
