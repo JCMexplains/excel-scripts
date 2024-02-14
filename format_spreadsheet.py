@@ -6,6 +6,7 @@ from openpyxl import load_workbook
 
 file_path = 'data.xlsx'
 sheet_name = 'Sheet1'
+row_to_search = 1
 
 # Load the workbook
 wb = load_workbook(file_path)
@@ -13,7 +14,7 @@ wb = load_workbook(file_path)
 # Select the active worksheet or specify the sheet name
 ws = wb.active  # or wb['SheetName']
 
-indices = column_names_to_indices(ws, column_names)
+indices = column_names_to_indices(ws, column_names, row_to_search)
 
 indices_list = sorted(indices.values(), reverse=True)
 print(indices_list)

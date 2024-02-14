@@ -1,5 +1,5 @@
 
-def column_names_to_indices(ws, column_names):
+def column_names_to_indices(ws, column_names, row_to_search):
     '''
     Convert column names to indices in an Excel sheet.
 
@@ -13,7 +13,7 @@ def column_names_to_indices(ws, column_names):
 
     # Find column indices in the third row
     col_indices = {cell_value: idx for idx, cell_value in enumerate(
-        ws[3], start=1) if cell_value.value in column_names}
+        ws[row_to_search], start=1) if cell_value.value in column_names}
 
     return col_indices
 
