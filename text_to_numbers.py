@@ -1,9 +1,9 @@
 from openpyxl import load_workbook
 
 
-def convert_text_to_numbers_with_openpyxl(excel_path):
+def convert_text_to_numbers_with_openpyxl(file_path):
     # Load the workbook and select the active worksheet
-    wb = load_workbook(filename=excel_path)
+    wb = load_workbook(filename=file_path)
     ws = wb.active  
     # Assuming you want to work with the first sheet
 
@@ -23,8 +23,8 @@ def convert_text_to_numbers_with_openpyxl(excel_path):
 
     # Save the modified workbook
     # Consider saving to a new file to preserve the original
-    modified_excel_path = "modified_" + excel_path
-    wb.save(filename=modified_excel_path)
+    modified_file_path = "modified_" + file_path
+    wb.save(filename=modified_file_path)
 
 
 # Example usage
