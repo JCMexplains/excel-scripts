@@ -1,5 +1,5 @@
 
-def convert_text_to_numbers(ws):
+def text_to_numbers(ws):
     # Takes an Excel worksheet from openpyxl as an argument
 
     # Iterate through all rows and columns, 
@@ -17,4 +17,4 @@ def convert_text_to_numbers(ws):
                     continue
 
 # Example usage
-# convert_text_to_numbers('data.xlsx')
+# text_to_numbers('data.xlsx')

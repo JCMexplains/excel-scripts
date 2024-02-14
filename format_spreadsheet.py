@@ -2,7 +2,7 @@ from col_names import col_names # a list of columns to delete
 from delete_columns import delete_columns
 from names_to_indices import names_to_indices
 from openpyxl import load_workbook
-from text_to_numbers import convert_text_to_numbers
+from text_to_numbers import text_to_numbers
 
 
 file_path = 'data.xlsx'
@@ -27,7 +27,7 @@ delete_columns(ws, indices_list)
 # removes table formatting, since otherwise deleting columns gives a weird error from a damaged table
 del ws.tables["Table1"]
 
-convert_text_to_numbers(ws)
+text_to_numbers(ws)
 
 # Determine the used range
 min_row = ws.min_row
