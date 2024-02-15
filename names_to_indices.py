@@ -16,4 +16,3 @@ def names_to_indices(ws, col_names, row_to_search):
         ws[row_to_search], start=1) if cell_value.value in col_names}
 
     return col_indices
-
