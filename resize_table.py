@@ -21,10 +21,10 @@ def resize_table(ws, table_name):
 
     table = Table(displayName=table_name, ref=f'{top_left}:{bottom_right}')
 
-    # Add a default table style with striped rows and banded columns
+    # Add a default table style with striped rows but without banded columns
     style = TableStyleInfo(
         name='TableStyleMedium9', showFirstColumn=False,
-        showLastColumn=False, showRowStripes=True, showColumnStripes=True
+        showLastColumn=False, showRowStripes=True, showColumnStripes=False
         )
 
     table.tableStyleInfo = style
