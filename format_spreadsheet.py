@@ -13,8 +13,8 @@ row_to_search = 1
 # Load the workbook
 wb = load_workbook(file_path)
     
-# Select the active worksheet or specify the sheet name
-ws = wb.active  # or wb['SheetName']
+# Specify the sheet to work on
+ws = wb[sheet_name]
 
 # exports come with two extra rows at the top; delete them
 ws.delete_rows(1, 2)
