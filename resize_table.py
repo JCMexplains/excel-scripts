@@ -4,7 +4,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 def resize_table(ws, table_name):
     
-    print('called')
+    print('resize_table was called')
     
     # removes table formatting, since otherwise 
     # deleting columns gives a weird error from a damaged table
