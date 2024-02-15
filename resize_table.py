@@ -24,6 +24,7 @@ def resize_table(ws, table_name):
         name='TableStyleMedium9', showFirstColumn=False,
         showLastColumn=False, showRowStripes=True, showColumnStripes=True
         )
+
     table.tableStyleInfo = style
 
     # Add the table to the worksheet
@@ -38,5 +39,3 @@ def convert_rowcol_to_alpha(row, col):
     alpha = f'{col_letter}{row}'
 
     return alpha
-
-    # print(alpha)  # This will print "B1"
