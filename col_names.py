@@ -3,6 +3,7 @@
 col_names = [
     'ClassFilter',
     'CourseTermKey',
+    'Credit Hrs',
     'Credit Type',
     'Curriculum.BC Course Discipline',
     'Curriculum.Course Id Prefix',
@@ -13,11 +14,13 @@ col_names = [
     'Curriculum.Primary Instructor Job Profile',
     'Curriculum.Primary Instructor Type',
     'Department',
+    'Division',
     'Fees',
     'FTE',
     'Gen Ed',
     'Paid FTE',
     'Random',
     'Sort',
+    'Std Cntct Hrs',
     'SummaryKey',
 ]  
