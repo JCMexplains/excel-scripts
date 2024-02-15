@@ -8,7 +8,7 @@ from text_to_numbers import text_to_numbers
 file_path = 'data.xlsx'
 sheet_name = 'Sheet1'
 table_name = 'Table1'
-row_to_search = 1
+row_to_search = 1 
 
 # Load the workbook
 wb = load_workbook(file_path)
@@ -16,6 +16,10 @@ wb = load_workbook(file_path)
 # Select the active worksheet or specify the sheet name
 ws = wb.active  # or wb['SheetName']
 
+# exports come with two extra rows at the top; delete them
+ws.delete_rows(1, 2)
+
+# this shows table name
 # print(ws.tables.items())
 
 indices = names_to_indices(ws, col_names, row_to_search)

@@ -4,6 +4,8 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 def resize_table(ws, table_name):
     
+    print('called')
+    
     # removes table formatting, since otherwise 
     # deleting columns gives a weird error from a damaged table
     del ws.tables[table_name]
@@ -16,6 +18,8 @@ def resize_table(ws, table_name):
 
     top_left = convert_rowcol_to_alpha(min_row, min_col)
     bottom_right = convert_rowcol_to_alpha(max_row, max_col)
+
+    print(top_left + ' ' + bottom_right)
 
     table = Table(displayName=table_name, ref=f'{top_left}:{bottom_right}')
 
