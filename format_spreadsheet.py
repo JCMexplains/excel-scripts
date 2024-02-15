@@ -1,12 +1,13 @@
-from col_names import col_names # a list of columns to delete
+from col_names import col_names  # a list of columns to delete
 from delete_columns import delete_columns
 from names_to_indices import names_to_indices
 from openpyxl import load_workbook
+from resize_table import resize_table
 from text_to_numbers import text_to_numbers
-
 
 file_path = 'data.xlsx'
 sheet_name = 'Sheet1'
+table_name = 'Table1'
 row_to_search = 1
 
 # Load the workbook
@@ -24,19 +25,9 @@ indices_list = sorted(indices.values(), reverse=True)
 
 delete_columns(ws, indices_list)
 
-# removes table formatting, since otherwise deleting columns gives a weird error from a damaged table
-del ws.tables["Table1"]
-
 text_to_numbers(ws)
 
-# Determine the used range
-min_row = ws.min_row
-max_row = ws.max_row
-min_col = ws.min_column
-max_col = ws.max_column
-
-# Print the used range
-print(f"Used range: Rows {min_row} to {max_row}, Columns {min_col} to {max_col}")
+resize_table(ws, table_name)
 
 # Save the modified workbook
 # Consider saving to a new file to preserve the original
