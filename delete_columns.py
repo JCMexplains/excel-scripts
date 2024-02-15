@@ -1,6 +1,4 @@
 
-
-
 def delete_columns(ws, cols_to_delete):
     '''
     Delete specified columns from an Excel file using openpyxl.
@@ -10,7 +8,6 @@ def delete_columns(ws, cols_to_delete):
     - cols_to_delete: A list of column indexes to delete, 1-based indexing.
                       Must be sorted in descending order.
     '''
-
 
     # Delete columns; iterate in reverse to avoid index shifting issues
     for col_index in sorted(cols_to_delete, reverse=True):
