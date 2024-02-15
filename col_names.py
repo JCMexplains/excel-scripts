@@ -13,6 +13,7 @@ col_names = [
     'Curriculum.Primary Instructor Job Profile',
     'Curriculum.Primary Instructor Type',
     'Department',
+    'Fees',
     'FTE',
     'Gen Ed',
     'Paid FTE',
