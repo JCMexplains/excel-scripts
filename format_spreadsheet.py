@@ -2,6 +2,7 @@ from col_names import col_names  # a list of columns to delete
 from delete_columns import delete_columns
 from names_to_indices import names_to_indices
 from openpyxl import load_workbook
+from regex_replace import regex_replace
 from resize_table import resize_table
 from text_to_numbers import text_to_numbers
 
@@ -19,9 +20,6 @@ ws = wb[sheet_name]
 # exports come with two extra rows at the top; delete them
 ws.delete_rows(1, 2)
 
-# this shows table name
-# print(ws.tables.items())
-
 indices = names_to_indices(ws, col_names, row_to_search)
 
 indices_list = sorted(indices.values(), reverse=True)
@@ -32,6 +30,8 @@ delete_columns(ws, indices_list)
 text_to_numbers(ws)
 
 resize_table(ws, table_name)
+
+regex_replace(ws, r'Curriculum\.', '')
 
 # Save the modified workbook
 # Consider saving to a new file to preserve the original
