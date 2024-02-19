@@ -1,4 +1,5 @@
 from col_names import col_names  # a list of columns to delete
+from datetime import datetime
 from delete_columns import delete_columns
 from names_to_indices import names_to_indices
 from openpyxl import load_workbook
@@ -33,7 +34,9 @@ resize_table(ws, table_name)
 
 regex_replace(ws, r'Curriculum\.', '')
 
-# Save the modified workbook
-# Consider saving to a new file to preserve the original
-modified_file_path = 'modified_' + file_path
+# Save the modified workbook with a new name
+
+current_date = datetime.now()
+ 
+modified_file_path = current_date.strftime('%b %d %y') + ' BI ' + file_path
 wb.save(filename=modified_file_path)
