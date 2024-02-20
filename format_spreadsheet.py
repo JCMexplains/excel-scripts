@@ -5,6 +5,7 @@ from names_to_indices import names_to_indices
 from openpyxl import load_workbook
 from regex_replace import regex_replace
 from resize_table import resize_table
+from set_col_width import set_col_width
 from text_to_numbers import text_to_numbers
 
 file_path = 'data.xlsx'
@@ -33,6 +34,8 @@ text_to_numbers(ws)
 resize_table(ws, table_name)
 
 regex_replace(ws, r'Curriculum\.', '')
+
+set_col_width(ws)
 
 # Save the modified workbook with a new name
 
