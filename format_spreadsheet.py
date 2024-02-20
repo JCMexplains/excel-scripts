@@ -19,7 +19,7 @@ wb = load_workbook(file_path)
 # Specify the sheet to work on
 ws = wb[sheet_name]
 
-# exports come with two extra rows at the top; delete them
+# exports come with two extra rows at the top
 ws.delete_rows(1, 2)
 
 indices = names_to_indices(ws, col_names, row_to_search)
@@ -37,7 +37,7 @@ regex_replace(ws, r'Curriculum\.', '')
 
 set_col_width(ws)
 
-# Save the modified workbook with a new name
+# Save wb with new name like "Feb 13 24 BI data.xslx"
 
 current_date = datetime.now()
  
