@@ -24,7 +24,7 @@ def process_workbook(
 
 
 def save_workbook_with_new_name(wb, original_file_path):
-    current_date = datetime.now().strftime('%b_%d_%Y')  # Using underscore as separator
+    current_date = datetime.now().strftime('%b_%d_%Y')  
     modified_file_path = f"{current_date}_BI_{original_file_path}"
     wb.save(filename=modified_file_path)
 
