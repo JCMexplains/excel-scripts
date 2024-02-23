@@ -1,45 +1,42 @@
-from col_names import col_names  # a list of columns to delete
+
 from datetime import datetime
-from delete_columns import delete_columns
-from names_to_indices import names_to_indices
+
+import helpers
 from openpyxl import load_workbook
-from regex_replace import regex_replace
-from resize_table import resize_table
-from set_col_width import set_col_width
-from text_to_numbers import text_to_numbers
 
-file_path = 'data.xlsx'
-sheet_name = 'Sheet1'
-table_name = 'Table1'
-row_to_search = 1 
 
-# Load the workbook
-wb = load_workbook(file_path)
-    
-# Specify the sheet to work on
-ws = wb[sheet_name]
+def process_workbook(
+        file_path, sheet_name, table_name, row_to_search, col_names):
+    wb = load_workbook(file_path)
+    ws = wb[sheet_name]
 
-# exports come with two extra rows at the top
-ws.delete_rows(1, 2)
+    ws.delete_rows(1, 2)  # Assuming first two rows are always to be deleted
 
-indices = names_to_indices(ws, col_names, row_to_search)
+    indices = helpers.names_to_indices(ws, col_names, row_to_search)
+    indices_list = sorted(indices.values(), reverse=True)
+    helpers.delete_columns(ws, indices_list)
 
-indices_list = sorted(indices.values(), reverse=True)
-# print(indices_list)
+    helpers.text_to_numbers(ws)
+    helpers.resize_table(ws, table_name)
+    helpers.regex_replace(ws, r'Curriculum\.', '')
+    helpers.set_col_width(ws)
 
-delete_columns(ws, indices_list)
+    save_workbook_with_new_name(wb, file_path)
 
-text_to_numbers(ws)
 
-resize_table(ws, table_name)
+def save_workbook_with_new_name(wb, original_file_path):
+    current_date = datetime.now().strftime('%b_%d_%Y')  # Using underscore as separator
+    modified_file_path = f"{current_date}_BI_{original_file_path}"
+    wb.save(filename=modified_file_path)
 
-regex_replace(ws, r'Curriculum\.', '')
 
-set_col_width(ws)
+if __name__ == "__main__":
+    file_path = 'data.xlsx'
+    sheet_name = 'Sheet1'
+    table_name = 'Table1'
+    row_to_search = 1
+    from col_names import col_names  # import specific to this usage
 
-# Save wb with new name like "Feb 13 24 BI data.xslx"
-
-current_date = datetime.now()
- 
-modified_file_path = current_date.strftime('%b %d %y') + ' BI ' + file_path
-wb.save(filename=modified_file_path)
+    process_workbook(
+        file_path, sheet_name, table_name, row_to_search, col_names
+        )
