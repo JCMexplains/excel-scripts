@@ -1,7 +1,5 @@
 import re
 
-import openpyxl
-
 
 def regex_replace(ws, find, replace):
 

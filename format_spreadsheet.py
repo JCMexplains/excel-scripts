@@ -17,19 +17,20 @@ def process_workbook(
 
     helpers.text_to_numbers(ws)
     helpers.resize_table(ws, table_name)
-    helpers.regex_replace(ws, r'Curriculum\.', '')
+    helpers.regex_replace(ws, r'Curriculum\.', '')  # delete this string
+    helpers.regex_replace(ws,  r'^(\d{3})0$', r'\1')  # trim trailing 0
     helpers.set_col_width(ws)
-
+ 
     save_workbook_with_new_name(wb, file_path)
 
 
 def save_workbook_with_new_name(wb, original_file_path):
     current_date = datetime.now().strftime('%b_%d_%Y')  
-    modified_file_path = f"{current_date}_BI_{original_file_path}"
+    modified_file_path = f'{current_date}_BI_{original_file_path}'
     wb.save(filename=modified_file_path)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     file_path = 'data.xlsx'
     sheet_name = 'Sheet1'
     table_name = 'Table1'
