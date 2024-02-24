@@ -18,7 +18,7 @@ def process_workbook(
     helpers.text_to_numbers(ws)
     helpers.resize_table(ws, table_name)
     helpers.regex_replace(ws, r'Curriculum\.', '')  # delete this string
-    helpers.regex_replace(ws,  r'^(\d{3})0$', r'\1')  # trim trailing 0
+    helpers.regex_replace(ws, r'^(\d{3})0$', r'\1')  # trim trailing 0
     helpers.set_col_width(ws)
  
     save_workbook_with_new_name(wb, file_path)
