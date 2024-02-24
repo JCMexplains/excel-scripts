@@ -15,12 +15,14 @@ def process_workbook(
     indices_list = sorted(indices.values(), reverse=True)
     helpers.delete_columns(ws, indices_list)
 
-    helpers.text_to_numbers(ws)
     helpers.resize_table(ws, table_name)
     helpers.regex_replace(ws, r'Curriculum\.', '')  # delete this string
     helpers.regex_replace(ws, r'^(\d{3})0$', r'\1')  # trim trailing 0
     helpers.set_col_width(ws)
- 
+    # because regex searches work on text, 
+    # best to keep the text_to_numbers call below the regex calls
+    helpers.text_to_numbers(ws) 
+
     save_workbook_with_new_name(wb, file_path)
 
 
