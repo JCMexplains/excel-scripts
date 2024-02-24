@@ -17,7 +17,12 @@ def process_workbook(
 
     helpers.resize_table(ws, table_name)
     helpers.regex_replace(ws, r'Curriculum\.', '')  # delete this string
-    helpers.regex_replace(ws, r'^(\d{3})0$', r'\1')  # trim trailing 0
+
+    # trim trailing zero from four-digit room number
+    # match only exactly four digits ending with zero
+    # to preserve unrelated numbers with a zero in them
+    helpers.regex_replace(ws, r'^(\d{3})0$', r'\1')  # trims trailing 0
+
     helpers.set_col_width(ws)
     # because regex searches work on text, 
     # best to keep the text_to_numbers call below the regex calls
