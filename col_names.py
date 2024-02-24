@@ -1,6 +1,7 @@
 # optional but recommended style to include a comma 
 # after the final element in a list
 col_names = [
+    'Campus_Name',
     'ClassFilter',
     'Course Description',
     'CourseTermKey',
