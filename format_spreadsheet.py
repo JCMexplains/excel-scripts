@@ -24,6 +24,7 @@ def process_workbook(
     helpers.regex_replace(ws, r'^(\d{3})0$', r'\1')  # trims trailing 0
 
     helpers.set_col_width(ws)
+    
     # because regex searches work on text, 
     # best to keep the text_to_numbers call below the regex calls
     helpers.text_to_numbers(ws) 
