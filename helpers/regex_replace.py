@@ -8,9 +8,17 @@ def regex_replace(ws, find, replace):
     pattern = re.compile(fr'{find}')
     for row in ws.iter_rows():
         for cell in row:
+            # print(type(cell.value))
             if cell.value and isinstance(cell.value, str):
                 if pattern.search(cell.value):
+                    print('match: ' + cell.value)
                     cell.value = pattern.sub(replace, cell.value)
+                    print('new: ' + cell.value)
+            # elif cell.value:
+                # print(cell.value)
+                # temp_value = str(cell.value)
+                # temp_value = pattern.sub(replace, temp_value)
+                # cell.value = datetime.datetime(temp_value)
 
 
 def main():
@@ -33,3 +41,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# usage:
+# pyt regex-replace.py filename.xlsx "text_to_find" "replacement_text"
