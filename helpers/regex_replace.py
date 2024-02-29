@@ -43,4 +43,4 @@ if __name__ == "__main__":
     main()
 
 # usage:
-# pyt regex-replace.py filename.xlsx "text_to_find" "replacement_text"
+# py regex-replace.py filename.xlsx "text_to_find" "replacement_text"
