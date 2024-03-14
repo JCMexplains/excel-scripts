@@ -11,9 +11,9 @@ def regex_replace(ws, find, replace):
             # print(type(cell.value))
             if cell.value and isinstance(cell.value, str):
                 if pattern.search(cell.value):
-                    print('match: ' + cell.value)
+                   # print('match: ' + cell.value)
                     cell.value = pattern.sub(replace, cell.value)
-                    print('new: ' + cell.value)
+                    # print('new: ' + cell.value)
             # elif cell.value:
                 # print(cell.value)
                 # temp_value = str(cell.value)
